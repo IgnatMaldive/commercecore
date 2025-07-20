@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Core Colors */
+    --color-background: #ffffff; /* white */
+    --color-foreground: #1e293b; /* slate-800 */
+    --color-border: #e2e8f0; /* slate-200 */
+    --color-input: #ffffff; /* white */
+    --color-ring: #2563eb; /* blue-600 */
+    
+    /* Card Colors */
+    --color-card: #ffffff; /* white */
+    --color-card-foreground: #1e293b; /* slate-800 */
+    --color-popover: #ffffff; /* white */
+    --color-popover-foreground: #1e293b; /* slate-800 */
+    
+    /* Muted Colors */
+    --color-muted: #f8fafc; /* slate-50 */
+    --color-muted-foreground: #64748b; /* slate-500 */
+    
+    /* Primary Colors */
+    --color-primary: #2563eb; /* blue-600 */
+    --color-primary-foreground: #ffffff; /* white */
+    
+    /* Secondary Colors */
+    --color-secondary: #f8fafc; /* slate-50 */
+    --color-secondary-foreground: #1e293b; /* slate-800 */
+    
+    /* Accent Colors */
+    --color-accent: #f59e0b; /* amber-500 */
+    --color-accent-foreground: #ffffff; /* white */
+    
+    /* Success Colors */
+    --color-success: #10b981; /* emerald-500 */
+    --color-success-foreground: #ffffff; /* white */
+    
+    /* Warning Colors */
+    --color-warning: #d97706; /* amber-600 */
+    --color-warning-foreground: #ffffff; /* white */
+    
+    /* Error Colors */
+    --color-error: #dc2626; /* red-600 */
+    --color-error-foreground: #ffffff; /* white */
+    
+    /* Destructive Colors */
+    --color-destructive: #dc2626; /* red-600 */
+    --color-destructive-foreground: #ffffff; /* white */
+    
+    /* Commerce Specific Colors */
+    --color-trust: #6366f1; /* indigo-500 */
+    --color-trust-foreground: #ffffff; /* white */
+    --color-surface: #f8fafc; /* slate-50 */
+    --color-text-secondary: #64748b; /* slate-500 */
+    --color-conversion: #dc2626; /* red-600 */
+    --color-conversion-foreground: #ffffff; /* white */
+  }
+
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+  
+  .font-headline {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+  }
+  
+  .font-value-prop {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+  }
+  
+  .font-body {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+  }
+  
+  .font-cta {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+  }
+  
+  .font-accent {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+  }
+}
+
+@layer components {
+  .commerce-shadow-card {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .commerce-shadow-modal {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  }
+  
+  .commerce-shadow-hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .commerce-transition {
+    transition: all 0.2s ease-out;
+  }
+  
+  .commerce-button-hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.15);
+  }
+  
+  .commerce-grid-golden {
+    grid-template-columns: 1.618fr 1fr;
+  }
+  
+  .commerce-pulse {
+    animation: commerce-pulse 2s infinite;
+  }
+  
+  @keyframes commerce-pulse {
+    0%, 100% {
+      opacity: 0.7;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+  
+  .commerce-slide-up {
+    transform: translateY(40px);
+    opacity: 0;
+    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  .commerce-slide-up.visible {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
